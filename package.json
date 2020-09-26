@@ -1,0 +1,14 @@
+{
+  "name": "module-47",
+  "version": "1.0.0",
+  "description": "this is the first node creating by me 09/26/2020",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nayeem",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
