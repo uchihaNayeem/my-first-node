@@ -1,6 +1,12 @@
 // following lines are kindof default i guess
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser');
+
+const cors = require('cors');
+
+app.use(cors());
+app.use(bodyParser.json());
 
 // 01
 app.get('/', (req, res) => {
@@ -42,7 +48,7 @@ app.get('/user/:id', (req, res) => {
 
   const userId = req.params.id;
   const name = person[userId] // akhane 'userId' index number er moto kaj korse
-  console.log(req.query)
+  // console.log(req.query)// http://localhost:4200/user/1?sort=dec
   res.send({name, userId}) // json banai felse {} diye
   
   console.log(req.params.id) // URL er id dhortese
@@ -51,6 +57,18 @@ app.get('/user/:id', (req, res) => {
 
 
 //05 use fetch to load data from server, middleware, handle cors
+
+
+//post
+
+app.post('/addUser', (res, req) => {
+  // console.log('data recieved',res.body);
+
+  //save to database
+  const user = req.body;
+  user.id = 55;
+  res.send(user);
+})
 
 
 
