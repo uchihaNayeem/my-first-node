@@ -15,6 +15,14 @@ app.get('/', (req, res) => {
 
 })
 
+app.get('/employee', (req, res) => {
+  const employee = {
+    name: 'Raju',
+    possition: 'Manager'
+  }
+  res.send({employee})
+})
+
 
 //02
 app.get('/shop/banana', (req, res)=>{
@@ -34,7 +42,7 @@ app.get('/user/:id', (req, res) => {
 
   const userId = req.params.id;
   const name = person[userId] // akhane 'userId' index number er moto kaj korse
-
+  console.log(req.query)
   res.send({name, userId}) // json banai felse {} diye
   
   console.log(req.params.id) // URL er id dhortese
@@ -42,6 +50,15 @@ app.get('/user/:id', (req, res) => {
 
 
 
+//05 use fetch to load data from server, middleware, handle cors
+
+
+
+
+
+
 
 // opening port 
-app.listen(4200, () => console.log("Lintening from port 4200"));
+app.listen(4200, () => {
+  console.log("Lintening from port 4200")
+});
